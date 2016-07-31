@@ -14,11 +14,11 @@ type SimpleGui
     function SimpleGui(parent)
         parent = PySide.project(parent)
         ace = PySide.QtWebKit[:QWebView](parent)
-        f = "file:///" * Pkg.dir("PySide", "tpl", "ace.html")
+        f = "file:///" * joinpath(dirname(@__FILE__), "..", "tpl", "ace.html")
         qinvoke(ace, :load, QtCore[:QUrl](f))
 
         output =  PySide.QtWebKit[:QWebView](parent)
-        f = "file:///" * Pkg.dir("PySide", "tpl", "output.html")
+        f = "file:///" * joinpath(dirname(@__FILE__), "..", "tpl", "output.html")
         qinvoke(output, :load, QtCore[:QUrl](f))
 
         sp = Splitter("Vertical", parent)
@@ -55,7 +55,7 @@ end
  using Mustache,  JSON
 # using GoogleCharts
 using PySide
-reload(Pkg.dir("PySide", "examples", "Evaluate.jl"))
+reload(joinpath(dirname(@__FILE__), "..", "examples", "Evaluate.jl"))
 using Evaluate
 using SG
 

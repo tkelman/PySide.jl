@@ -17,7 +17,7 @@ include("data-frame-model.jl")
 
 ## replace this
 ##include("pyqtgraph.jl")  
-## call reload(Pkg.dir("PySide", "src", "pyqtgraph.jl"))
+## call reload(joinpath(dirname(@__FILE__), "pyqtgraph.jl"))
 ##      using PyQtGraph
 
 export Qt, QtCore, QtSvg, QtWebkit
@@ -85,9 +85,9 @@ function __init__()
 
     ## combining enums require us to work in python:
     if PyCall.pyversion < v"3" 
-        PyCall.pyeval("execfile(x, globals())", x = Pkg.dir("PySide", "tpl", "imports.tpl")) 
+        PyCall.pyeval("execfile(x, globals())", x = joinpath(dirname(@__FILE__), "..", "tpl", "imports.tpl")) 
     else 
-        PyCall.pyeval("exec(open(x, 'rb').read(), globals())", x = Pkg.dir("PySide", "tpl", "imports.tpl"))
+        PyCall.pyeval("exec(open(x, 'rb').read(), globals())", x = joinpath(dirname(@__FILE__), "..", "tpl", "imports.tpl"))
     end
 
     ## use PyCall's start gui

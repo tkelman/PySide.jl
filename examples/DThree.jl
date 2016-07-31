@@ -8,7 +8,7 @@ using PyCall
 using PySide
 using Mustache
 
-tpl = Mustache.template_from_file(Pkg.dir("PySide", "tpl", "d3.html"))
+tpl = Mustache.template_from_file(joinpath(dirname(@__FILE__), "..", "tpl", "d3.html"))
 
 
 type AsIs

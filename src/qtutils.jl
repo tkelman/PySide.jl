@@ -32,7 +32,7 @@ qexec(object::PyObject) = convert(Function, object[:exec])()
 
 ##################################################
 ## Methods for extending classes. Hacky.
-newclass_tpl = Mustache.template_from_file(Pkg.dir("PySide", "tpl", "newclass.tpl"))
+newclass_tpl = Mustache.template_from_file(joinpath(dirname(@__FILE__), "..", "tpl", "newclass.tpl"))
 
 ## Create new class from parent
 ## qclass("Example", "QtGui.QWidget") ## not Qt.QWidget...

@@ -1,5 +1,5 @@
 using PySide
-reload(Pkg.dir("PySide", "examples", "DThree.jl"))
+reload(joinpath(dirname(@__FILE__), "DThree.jl"))
 
 ## This is an attempt to integrate D3 graphics with julia via QtWebView.
 ## The performance is *surpringly* poor due to really slow passing of JavaScript

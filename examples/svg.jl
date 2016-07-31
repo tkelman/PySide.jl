@@ -1,5 +1,5 @@
 ## show an svg file
-## reload(Pkg.dir("PySide", "examples", "svg.jl"))
+## reload(joinpath(dirname(@__FILE__), "svg.jl"))
 
 using PySide
 using Gadfly, Compose

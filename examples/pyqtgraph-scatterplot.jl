@@ -5,7 +5,7 @@
 ## Mostly From ScatterPlot.py example
 
 using PySide
-reload(Pkg.dir("PySide", "src", "pyqtgraph.jl"))
+reload(joinpath(dirname(@__FILE__), "..", "src", "pyqtgraph.jl"))
 using PyQtGraph
 
 w = Widget()
